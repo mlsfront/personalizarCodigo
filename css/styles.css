@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --azul-claro: #c9dfff;
+    --color-class: #5392f9;
+    --cinza-escuro: #232526;
+    --color-const: purple;
+    --color-echo: yellow;
+    --color-function: #7FFF00;
+    --color-new: #5392f9;
+    --color-object: pink;
+    --color-private: red;
+    --color-protected: red;
+    --color-public: red;
+    --color-this: #5392f9;
+}
+
+body {
+    background-color: var(--azul-claro);
+}
+
+h1 {
+    text-align: center;
+    padding: 25px 0;
+}
+
+main {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 25px;
+}
+
+main > h2 {
+    padding: 25px 0 0 7px;
+    line-height: 1.5;
+}
+
+main > p {
+    font-size: 18px;
+    padding: 0 7px;
+    line-height: 1.5;
+}
+
+main > p span.color-echo,
+main > p span.color-function {
+    text-shadow: 1px 1px var(--cinza-escuro);
+}
+
+/*hepers*/
+.text-center {
+    text-align: center;
+}
+/*fim hepers*/
+
+/*pre codigo*/
+pre {
+    background-color: var(--cinza-escuro);
+    box-shadow: 1px 1px 5px var(--cinza-escuro);
+    color: var(--azul-claro);
+    margin: 7px;
+    padding: 7px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+pre > h2::before {
+    content: "Código: ";
+}
+
+pre > h2 {
+    margin-top: 0;
+    margin-bottom: -20px;
+}
+/*fim pre codigo*/
+
+button.copyTexto{
+    float: right;
+}
+
+/*conteudo cores*/
+.content-cores {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 10px;
+}
+
+.content-cores .card {    
+    max-width: 300px;
+    min-width: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.content-cores .card h2 {
+    margin-bottom: 0;
+}
+
+.content-cores .card h2::before {
+    content: "Cor: ";
+}
+/*fim conteudo cores*/
+
+/*estiloPhp*/
+.estiloPhp {
+    background-color: var(--azul-claro);
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    height: 80px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.estiloPhp.corClass {
+    background-color: var(--color-class);
+    color: var(--cinza-escuro);
+}
+
+.estiloPhp.corConst {
+    background-color: var(--color-const);
+    color: var(--azul-claro);
+}
+
+.estiloPhp.corEcho {
+    background-color: var(--color-echo);
+    color: var(--cinza-escuro);
+}
+
+.estiloPhp.corFunction {
+    background-color: var(--color-function);
+    color: var(--cinza-escuro);
+}
+
+.estiloPhp.corNew {
+    background-color: var(--color-new);
+    color: var(--cinza-escuro);
+}
+
+.estiloPhp.corObject {
+    background-color: var(--color-object);
+}  
+
+.estiloPhp.corPrivate {
+    background-color: var(--color-private);
+    color: var(--cinza-escuro);
+}
+
+.estiloPhp.corProtected {
+    background-color: var(--color-protected);
+}  
+
+.estiloPhp.corPublic {
+    background-color: var(--color-public);
+}  
+
+.estiloPhp.corThis {
+    background-color: var(--color-this);
+}  
+/*fim estiloPhp*/
+
+/*CORES
+    <span class="color-class">class</span>
+    <span class="color-const">const</span>
+    <span class="color-echo">echo</span>
+    <span class="color-function">function</span>
+    <span class="color-new">new</span>
+    <span class="color-private">private</span>
+    <span class="color-protected">protected</span>
+    <span class="color-public">public</span>
+    <span class="color-this">$this-></span>
+*/
+
+span.color-class{
+    color: var(--color-class);
+}
+span.color-const{
+    color: var(--color-const);
+}
+span.color-echo{
+    color: var(--color-echo);
+}
+span.color-function{
+    color: var(--color-function);
+    font-weight: bold;
+}
+span.color-new{
+    color: var(--color-new);
+}
+span.color-object{
+    color: var(--color-object);
+}
+span.color-private{
+    color: var(--color-private);
+}
+span.color-protected{
+    color: var(--color-protected);
+}
+span.color-public{
+    color: var(--color-public);
+}
+span.color-this{
+    color: var(--color-this);
+}
+/*fim cores*/
+
+
+/*media*/
+@media screen and (max-width:990px){
+    .content-cores {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-cores {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:400px){
+    .content-cores .card {    
+        min-width: none;
+    }
+
+    main {
+        padding: 0;
+    }
+}
+/*fim media*/

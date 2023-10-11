@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalizar código</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>Cores para personalizar código</h1>
+
+  <div class="text-center">
+    <p>Objetivo; facilitar visualização para estudar</p>
+  </div>
+
+  <main>
+    <!--espaco codigo-->
+    <pre>
+    <h2></h2>
+    <h4>PHP - Modificadores de Acesso</h4>      
+    &lt;?php
+      <span class="color-class">class</span> Fruit {
+      <span class="color-public">public</span> $name;
+      <span class="color-public">public</span> $color;
+      <span class="color-public">public</span> $weight;
+      
+      <span class="color-function">function</span> set_name($n) {  // a public <span class="color-function">function</span> (default)
+          <span class="color-this">$this-></span>name = $n;
+      }
+      <span class="color-protected">protected</span> <span class="color-function">function</span> set_color($n) { // a <span class="color-protected">protected</span> <span class="color-function">function</span>
+          <span class="color-this">$this-></span>color = $n;
+      }
+      <span class="color-private">private</span> <span class="color-function">function</span> set_weight($n) { // a <span class="color-private">private</span> <span class="color-function">function</span>
+          <span class="color-this">$this-></span>weight = $n;
+      }
+    }
+    <span class="color-echo">echo</span> "Saída: ";
+     <span class="color-object">$mango</span> = <span class="color-new">new</span> Fruit();
+     <span class="color-object">$mango</span>-&gt;set_name('Mango'); // OK
+     <span class="color-object">$mango</span>-&gt;set_color('Yellow'); // ERROR
+     <span class="color-object">$mango</span>-&gt;set_weight('300'); // ERROR
+    ?&gt; 
+    </pre>
+    <!--fim espaco codigo-->
+
+    <!--conteudo das cores-->
+    <div class="content-cores">
+      <div class="card">
+        <h2>Class</h2>
+        <div class="estiloPhp corClass">
+          <input type="button" class="copyButton" data-target=".corClass" value="copy: class">
+          &lt;span class="color-class"&gt;class&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Const</h2>
+        <div class="estiloPhp corConst">
+          <input type="button" class="copyButton" data-target=".corConst" value="copy: const">
+          &lt;span class="color-const"&gt;const&lt;/span&gt;
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2>Echo</h2>
+        <div class="estiloPhp corEcho">
+          <input type="button" class="copyButton" data-target=".corEcho" value="copy: echo">
+          &lt;span class="color-echo"&gt;echo&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Function</h2>
+        <div class="estiloPhp corFunction">
+          <input type="button" class="copyButton" data-target=".corFunction" value="copy: function">
+          &lt;span class="color-function"&gt;function&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>New</h2>
+        <div class="estiloPhp corNew">
+          <input type="button" class="copyButton" data-target=".corNew" value="copy: new">
+          &lt;span class="color-new"&gt;new&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Object</h2>
+        <div class="estiloPhp corObject">
+          <input type="button" class="copyButton" data-target=".corObject" value="copy: object">
+          &lt;span class="color-object"&gt;object&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Private</h2>
+        <div class="estiloPhp corPrivate">
+          <input type="button" class="copyButton" data-target=".corPrivate" value="copy: private">
+          &lt;span class="color-private"&gt;private&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Protected</h2>
+        <div class="estiloPhp corProtected">
+          <input type="button" class="copyButton" data-target=".corProtected" value="copy: protected">
+          &lt;span class="color-protected"&gt;protected&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Public</h2>
+        <div class="estiloPhp corPublic">
+          <input type="button" class="copyButton" data-target=".corPublic" value="copy: public">
+          &lt;span class="color-public"&gt;public&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>This</h2>
+        <div class="estiloPhp corThis">
+          <input type="button" class="copyButton" data-target=".corThis" value="copy: this">
+          &lt;span class="color-this"&gt;this&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+    <!--fim conteudo das cores-->
+  </main>
+
+  <!--script copiar conteudo div-->
+  <script>
+    function copyText(targetClass) {
+      var texto = document.querySelector(targetClass);
+
+      var selecionar = document.createRange();
+      selecionar.selectNodeContents(texto);
+
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(selecionar);
+
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+    }
+
+    document.querySelectorAll(".copyButton").forEach(function(button) {
+      button.addEventListener("click", function() {
+        var targetClass = button.getAttribute("data-target");
+        copyText(targetClass);
+      });
+    });
+  </script>
+  <!--fim script copiar conteudo div-->
+
+</body>
+</html>
