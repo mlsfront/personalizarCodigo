@@ -10,12 +10,14 @@
     --color-const: purple;
     --color-echo: yellow;
     --color-function: #7FFF00;
-    --color-new: #5392f9;
+    --color-new: #7FFFD4;
     --color-object: pink;
-    --color-private: red;
+    --color-private: #FF4500;
     --color-protected: red;
-    --color-public: red;
-    --color-this: #5392f9;
+    --color-public: #FF7F50;
+    --color-static: #FF1493;
+    --color-this: #00BFFF;
+    --color-trait: #7B68EE;
 }
 
 body {
@@ -160,9 +162,17 @@ button.copyTexto{
     background-color: var(--color-public);
 }  
 
+.estiloPhp.corStatic {
+    background-color: var(--color-static);
+} 
+
 .estiloPhp.corThis {
     background-color: var(--color-this);
 }  
+
+.estiloPhp.corTrait {
+    background-color: var(--color-trait);
+} 
 /*fim estiloPhp*/
 
 /*CORES
@@ -205,8 +215,14 @@ span.color-protected{
 span.color-public{
     color: var(--color-public);
 }
+span.color-static{
+    color: var(--color-static);
+}
 span.color-this{
     color: var(--color-this);
+}
+span.color-trait{
+    color: var(--color-trait);
 }
 /*fim cores*/
 

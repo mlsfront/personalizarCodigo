@@ -19,26 +19,39 @@
     <h2></h2>
     <h4>PHP - Modificadores de Acesso</h4>      
     &lt;?php
-      <span class="color-class">class</span> Fruit {
-      <span class="color-public">public</span> $name;
-      <span class="color-public">public</span> $color;
-      <span class="color-public">public</span> $weight;
-      
-      <span class="color-function">function</span> set_name($n) {  // a public <span class="color-function">function</span> (default)
-          <span class="color-this">$this-></span>name = $n;
+      <span class="color-class">class</span> Foo {
+        <span class="color-public">public</span> <span class="color-static">static</span> <span class="color-function">function</span> aStaticMethod() {
+          // ...
+        }
       }
-      <span class="color-protected">protected</span> <span class="color-function">function</span> set_color($n) { // a <span class="color-protected">protected</span> <span class="color-function">function</span>
-          <span class="color-this">$this-></span>color = $n;
+    
+      <span class="color-class">class</span> Fruit 
+      {
+        <span class="color-public">public</span> $name;
+        <span class="color-public">public</span> $color;
+        <span class="color-public">public</span> $weight;
+        
+        <span class="color-function">function</span> set_name($n) //a public function (default)
+        {   
+            <span class="color-this">$this-></span>name = $n;
+        }    
+        
+        <span class="color-protected">protected</span> <span class="color-function">function</span> set_color($n) //a protected function 
+        {   
+            <span class="color-this">$this-></span>color = $n;
+        }
+        
+        <span class="color-private">private</span> <span class="color-function">function</span> set_weight($n) //a private function
+        { 
+            <span class="color-this">$this-></span>weight = $n;
+        }
       }
-      <span class="color-private">private</span> <span class="color-function">function</span> set_weight($n) { // a <span class="color-private">private</span> <span class="color-function">function</span>
-          <span class="color-this">$this-></span>weight = $n;
-      }
-    }
-    <span class="color-echo">echo</span> "Saída: ";
-     <span class="color-object">$mango</span> = <span class="color-new">new</span> Fruit();
-     <span class="color-object">$mango</span>-&gt;set_name('Mango'); // OK
-     <span class="color-object">$mango</span>-&gt;set_color('Yellow'); // ERROR
-     <span class="color-object">$mango</span>-&gt;set_weight('300'); // ERROR
+
+      <span class="color-echo">echo</span> "Saída: ";
+      <span class="color-object">$mango</span> = <span class="color-new">new</span> Fruit();
+      <span class="color-object">$mango</span>-&gt;set_name('Mango'); // OK
+      <span class="color-object">$mango</span>-&gt;set_color('Yellow'); // ERROR
+      <span class="color-object">$mango</span>-&gt;set_weight('300'); // ERROR
     ?&gt; 
     </pre>
     <!--fim espaco codigo-->
@@ -118,10 +131,26 @@
       </div>
 
       <div class="card">
+        <h2>Static</h2>
+        <div class="estiloPhp corStatic">
+          <input type="button" class="copyButton" data-target=".corStatic" value="copy: static">
+          &lt;span class="color-static"&gt;static&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
         <h2>This</h2>
         <div class="estiloPhp corThis">
           <input type="button" class="copyButton" data-target=".corThis" value="copy: this">
           &lt;span class="color-this"&gt;this&lt;/span&gt;
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Trait</h2>
+        <div class="estiloPhp corTrait">
+          <input type="button" class="copyButton" data-target=".corTrait" value="copy: trait">
+          &lt;span class="color-trait"&gt;trait&lt;/span&gt;
         </div>
       </div>
 

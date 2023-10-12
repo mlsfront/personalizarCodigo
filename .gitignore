@@ -1,0 +1,9 @@
+#dir
+utils/
+testes/
+teste/
+test/
+
+#files
+desktop.ini
+.bat
